@@ -1,0 +1,10 @@
+{% extends './layout.html' %}
+{% block content %}
+<h1>Edit</h1>
+<form method='POST' action='/products/{{pro.id}}/edit'>
+
+  <input name='newName' class='form-control' value={{pro.name}} />
+
+ <button type='submit' class='btn btn-primary'>Update</button>
+</form>
+{% endblock %}

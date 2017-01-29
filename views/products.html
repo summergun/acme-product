@@ -10,10 +10,13 @@
   <ul class='list-group'>
     {% for product in products %}
       <li class='list-group-item'>
-        <a href='/products/{{product.id}}'>
+        <button type='edit' class='btn btn-primary' onclick="location.href='/products/{{product.id}}/edit'">Edit</button>
           {{ product.name }}
         </a>
       </li>
     {% endfor %}
   </ul>
 {% endblock %}
+
+<!-- <button onclick="location.href='http://www.example.com'" type="button">
+     www.example.com</button> -->
