@@ -1,0 +1,30 @@
+{
+  "name": "acme-products",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/summergun/acme-products.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/summergun/acme-products/issues"
+  },
+  "homepage": "https://github.com/summergun/acme-products#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.1",
+    "method-override": "^2.3.7",
+    "nodemon": "^1.11.0",
+    "socketio": "^1.0.0",
+    "swig": "^1.4.2"
+  }
+}
