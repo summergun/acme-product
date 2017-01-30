@@ -1,22 +1,25 @@
 {% extends './layout.html' %}
 {% block content %}
 <h1>Product</h1>
-  <form method='POST' action='/products'>
-    <div class='form-group'>
-      <input class='form-control' name='name' placeholder='name....' />
-    </div>
-    <button type='submit' class='btn btn-primary'>Save</button>
-  </form>
+<p>
+    <button type='add' class='btn btn-primary' onclick="location.href='/products/add'">Add a product</button>
+  </p>
   <ul class='list-group'>
     {% for product in products %}
-      <li class='list-group-item'>
-        <button type='edit' class='btn btn-primary' onclick="location.href='/products/{{product.id}}/edit'">Edit</button>
-          {{ product.name }}
+      <li class='list-group-item' style='padding:20px 15px'>
+           {{ product.name }}
+        <button type='edit' style='margin-right:10px' class='btn btn-primary pull-right' onclick="location.href='/products/{{product.id}}/edit'">Edit</button>
+        <form style='display:inline' method='POST' action='/products/{{product.id}}'>
+        <button type='submit' style='margin-right: 10px' class='btn btn-danger pull-right'>Delete</button>
+        </form>
         </a>
       </li>
     {% endfor %}
   </ul>
 {% endblock %}
 
-<!-- <button onclick="location.href='http://www.example.com'" type="button">
-     www.example.com</button> -->
+
+
+
+
+
