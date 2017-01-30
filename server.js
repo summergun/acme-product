@@ -9,6 +9,7 @@ const app = express();
 const server = app.listen(3000);
 const io=socketio.listen(server);
 swig.setDefaults({ cache: false });
+app.use(methodOverride('_method'));
 
 app.use('/vendor', express.static(path.join(__dirname, 'node_modules')));
 app.use(bodyParser.urlencoded( { extended: false }));//tell express to use bodyparser

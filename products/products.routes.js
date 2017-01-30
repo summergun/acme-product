@@ -50,13 +50,12 @@ const addProduct=function(product){
   res.render('add');
 });
 
-deleteProduct= function(id){
-    var idx = indexOf(this.findTargetProduct(id));
-    this.getProducts().splice(idx, 1);
-  }
 
   router.delete('/:id',(req,res)=>{
-    deleteProduct(req.params.id*1);
+    const id=req.params.id*1;
+    const product = findTargetProduct(id);
+    const index = myProducts.indexOf(product);
+    myProducts.splice(index,1);
     res.redirect('/products')
 })
 

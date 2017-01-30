@@ -9,7 +9,7 @@
       <li class='list-group-item' style='padding:20px 15px'>
            {{ product.name }}
         <button type='edit' style='margin-right:10px' class='btn btn-primary pull-right' onclick="location.href='/products/{{product.id}}/edit'">Edit</button>
-        <form style='display:inline' method='POST' action='/products/{{product.id}}'>
+        <form style='display:inline' method='POST' action='/products/{{product.id}}?_method=DELETE'>
         <button type='submit' style='margin-right: 10px' class='btn btn-danger pull-right'>Delete</button>
         </form>
         </a>
