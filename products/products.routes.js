@@ -59,20 +59,6 @@ const addProduct=function(product){
     res.redirect('/products')
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router;
 
 
