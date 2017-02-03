@@ -14,15 +14,16 @@ app.use(methodOverride('_method'));
 app.use('/vendor', express.static(path.join(__dirname, 'node_modules')));
 app.use(bodyParser.urlencoded( { extended: false }));//tell express to use bodyparser
 app.set('view engine', 'html');
-app.engine('html',swig.renderFile);
+app.engine('html', swig.renderFile);
 
 
 app.use('/products', require('./products/products.routes.js'));
 
 app.get('/',(req,res,next)=>{
-    res.render('index',{nav:'home',title:'Home'});
+    res.render('index',{nav:'home', title:'Home'});
 })
 
 app.listen(process.env.PORT || 3000, function(){
+  //use backticks instead..
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
