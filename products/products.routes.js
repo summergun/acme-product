@@ -1,12 +1,15 @@
 const express=require('express');
 const router =express.Router();
+//naming.. just call this products
 const myProducts = require('./product.model.js');
 
+//not sure you need this method
 const getProducts=function(){
   return myProducts;
 }
 
-const findTargetProduct=function(id){
+//give yourself some space around your operators
+const findTargetProduct = function(id){
   for(var i=0;i<myProducts.length;i++){
     if(myProducts[i].id===id){
       return myProducts[i];
@@ -14,8 +17,9 @@ const findTargetProduct=function(id){
   }
 }
 
+//this logic should be in the product model instead.
 const addProduct=function(product){
-  var max=myProducts.length;
+  var max=myProducts.length;//use reduce to find the max value
   max++;
   product.id=max;
   myProducts.push(product);
@@ -27,10 +31,11 @@ const addProduct=function(product){
 
   router.get('/:id/edit',(req,res,next)=>{
     const id = req.params.id*1;
-    var pro=findTargetProduct(id);
+    var pro=findTargetProduct(id);//naming.. call it product not pro
     res.render('edit',{pro})
   })
 
+  //if editing then use patch or put... only post for inserting
   router.post('/:id/edit',(req,res,next)=>{
     const newvalue = req.body.newName;
     const id = req.params.id*1;
