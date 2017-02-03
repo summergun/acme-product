@@ -4,5 +4,7 @@ const products=[
   {id:3,name:'bazz'}
 ];
 
+//don't just use this for data-- use it for your business logic too... 
+//this should have the CRUD methods as well
 
 module.exports=products;
